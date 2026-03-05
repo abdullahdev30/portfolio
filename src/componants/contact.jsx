@@ -3,13 +3,13 @@ import { Mail, Phone, MapPin, Send, Globe, Share2, Instagram, Youtube } from 'lu
 
 const Contact = () => {
   return (
-    <section id="contact" className="w-full bg-[#211910] px-8 py-20 border-t border-white/5">
+    <section id="contact" className="w-full bg-background px-8 py-20 border-t border-white/5">
       <div className="mx-auto max-w-7xl">
         
         {/* Header */}
         <div className="mb-16">
-          <p className="text-[10px] font-bold text-orange-600 uppercase tracking-[0.2em] mb-2">Contact</p>
-          <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
+          <p className="text-xl font-bold text-t-secondary uppercase tracking-[0.2em] mb-2">Contact</p>
+          <h2 className="text-4xl md:text-5xl font-black text-t-primary leading-tight">
             Let's build something <br />
             extraordinary together.
           </h2>
@@ -18,14 +18,14 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Contact Form */}
-          <div className="bg-[#2a2118] p-8 lg:p-10 rounded-3xl border border-white/5 shadow-2xl">
+          <div className="bg-secondary p-8 lg:p-10 rounded-3xl border border-white/5 shadow-2xl">
             <form className="space-y-6">
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Full Name</label>
                 <input 
                   type="text" 
                   placeholder="Abdullah Shafique"
-                  className="w-full bg-[#1a0f08] border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)]"
+                  className="w-full bg-background border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)]"
                 />
               </div>
 
@@ -34,7 +34,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   placeholder="abdullahshafique319@gmail.com"
-                  className="w-full bg-[#1a0f08] border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)]"
+                  className="w-full bg-background border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)]"
                 />
               </div>
 
@@ -43,11 +43,11 @@ const Contact = () => {
                 <textarea 
                   rows="4"
                   placeholder="Tell me about your project ideas..."
-                  className="w-full bg-[#1a0f08] border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)] resize-none"
+                  className="w-full bg-background border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-gray-700 outline-none transition-all focus:border-orange-600 focus:shadow-[0_0_15px_rgba(234,88,12,0.2)] resize-none"
                 ></textarea>
               </div>
 
-              <button className="group flex w-full items-center justify-center gap-3 rounded-xl bg-orange-600 py-5 font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(234,88,12,0.4)] active:scale-95">
+              <button className="group flex w-full items-center justify-center gap-3 rounded-xl bg-t-secondary py-5 font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(234,88,12,0.4)] active:scale-95">
                 Send Message <Send size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
             </form>
@@ -58,22 +58,22 @@ const Contact = () => {
             {/* Info Items */}
             <div className="space-y-8">
               <div className="flex items-center gap-6 group">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-600/10 text-orange-600 transition-all group-hover:bg-orange-600 group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-t-secondary transition-all group-hover:bg-orange-600 group-hover:text-white">
                   <Mail size={24} />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Email Me</p>
-                  <p className="text-white font-bold text-lg">abdullahshafique319@gmail.com</p>
+                  <p className="text-t-primary font-bold text-lg">abdullahshafique319@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-600/10 text-orange-600 transition-all group-hover:bg-orange-600 group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-t-secondary transition-all group-hover:bg-orange-600 group-hover:text-white">
                   <MapPin size={24} />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Office</p>
-                  <p className="text-white font-bold text-lg">Okara, Pakistan</p>
+                  <p className="text-t-primary font-bold text-lg">Okara, Pakistan</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Contact = () => {
                   <a 
                     key={i} 
                     href="#" 
-                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2a2118] text-orange-600 border border-white/5 transition-all hover:bg-orange-600 hover:text-white hover:shadow-[0_0_15px_rgba(234,88,12,0.3)]"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-t-secondary border border-white/5 transition-all hover:bg-orange-600 hover:text-white hover:shadow-[0_0_15px_rgba(234,88,12,0.3)]"
                   >
                     <Icon size={20} />
                   </a>
