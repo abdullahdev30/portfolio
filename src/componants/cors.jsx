@@ -21,15 +21,15 @@ const Skills = () => {
   ];
 
   return (
-    <section className="w-full bg-[#211910] px-8 py-20 border-t border-white/5">
+    <section className="w-full  px-8 py-20 bg-secondary border-t border-white/5">
       <div className="mx-auto max-w-7xl">
         
         {/* Section Header */}
         <div className="mb-12">
-          <h2 className="text-4xl font-black text-white tracking-tight">
-            Core <span className="text-orange-600">Expertise</span>
+          <h2 className="text-6xl font-black text-white tracking-tight">
+            Core <span className="text-t-secondary">Expertise</span>
           </h2>
-          <div className="mt-2 h-1 w-20 bg-orange-600 rounded-full"></div>
+          <div className="mt-2 h-1 w-40 bg-t-secondary rounded-full"></div>
         </div>
 
         {/* Expertise Cards Grid */}
@@ -37,17 +37,17 @@ const Skills = () => {
           {expertise.map((skill, index) => (
             <div 
               key={index} 
-              className="group relative rounded-2xl bg-[#2a2118] p-8 border border-white/5 transition-all hover:bg-[#32281e] hover:shadow-2xl"
+              className="group relative rounded-2xl bg-background p-8 border border-white/5 transition-all hover:bg-[#32281e] hover:shadow-2xl"
             >
               {/* Icon Container */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-600/10 group-hover:bg-orange-600 transition-colors">
-                <div className="group-hover:text-white transition-colors">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary  transition-colors">
+                <div className="text-t-secondary transition-colors">
                   {skill.icon}
                 </div>
               </div>
 
               {/* Text Content */}
-              <h3 className="mb-3 text-xl font-bold text-white">
+              <h3 className="mb-3 text-xl font-bold text-t-primary group-hover:text-white transition-colors">
                 {skill.title}
               </h3>
               <p className="text-sm leading-relaxed text-gray-400">
