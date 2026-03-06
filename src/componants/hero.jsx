@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="mx-auto max-w-4xl flex flex-col items-center">
         
         {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-background bg-background px-4 py-1.5 mb-8">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#f27f0c] bg-background px-4 py-1.5 mb-8">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-t-secondary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-t-secondary"></span>
@@ -36,7 +36,7 @@ const Hero = () => {
           <button className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-t-secondary px-8 py-4 font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
             View My Work <ArrowRight size={20} />
           </button>
-          <button className="w-full sm:w-auto rounded-xl border border-t-secondary bg-white/5 px-8 py-4 font-bold text-t-primary transition-all hover:bg-t-secondary hover:text-white hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
+          <button className="w-full sm:w-auto rounded-xl border border-[#f27f0c] bg-white/5 px-8 py-4 font-bold text-t-primary transition-all hover:bg-t-secondary hover:text-white hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
             Get In Touch
           </button>
         </div>
@@ -47,12 +47,12 @@ const Hero = () => {
             <h3 className="text-2xl font-black text-t-primary">Fresher</h3>
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Status</p>
           </div>
-          <div className="flex flex-col items-center border-y border-t-primary py-6 sm:border-y-0 sm:py-0 sm:border-x sm:px-8">
-            <h3 className="text-2xl font-black text-t-primary">Next.js</h3>
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Expertise</p>
+          <div className="flex flex-col items-center mborder-y border-t-primary py-6 sm:border-y-0 sm:py-0 sm:border-x sm:px-8">
+            <h3 className="text-2xl font-black text-t-primary">Frontend Developer</h3>
+                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Expertise</p>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-black text-t-primary">Devisgon</h3>
+            <h3 className="text-2xl font-black text-t-primary">Automation</h3>
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Project</p>
           </div>
         </div>

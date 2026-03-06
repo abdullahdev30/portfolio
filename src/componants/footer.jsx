@@ -14,7 +14,7 @@ const Footer = () => {
                 <Zap size={18} color="black" fill="black" />
               </div>
               <span className="text-xl font-bold text-t-primary tracking-tight">
-                Creative<span className="text-t-secondary">Pro</span>
+                Abdullah<span className="text-t-secondary"> Shafique</span>
               </span>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed">
@@ -44,10 +44,7 @@ const Footer = () => {
           <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">
             © 2026 Abdullah Shafique. All Rights Reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-[10px] font-bold text-gray-600 uppercase tracking-widest hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[10px] font-bold text-gray-600 uppercase tracking-widest hover:text-white transition-colors">Terms of Service</a>
-          </div>
+         
         </div>
       </div>
     </footer>
