@@ -17,8 +17,12 @@ const Navigation = () => {
         
         {/* Desktop Logo & Branding */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f27f0c]">
-            <Code2 size={22} color="white" strokeWidth={3} />
+          <div className="flex h-10 w-10 items-center overflow-hidden justify-center rounded-xl bg-[#f27f0c]">
+            <img
+              src="/images/lo.svg"
+              alt="Logo"
+              className="h-full w-full object-cover scale-150 mt-4 ml-2 text-white" 
+            />
           </div>
           <span className="text-xl font-black tracking-tighter text-t-primary uppercase">
             Ch<span className="text-t-secondary"> Abdullah</span>
@@ -66,8 +70,11 @@ const Navigation = () => {
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f27f0c]">
-                <Code2 size={20} color="white" strokeWidth={3} />
-              </div>
+<img
+              src="/images/lo.svg"
+              alt="Logo"
+              className="h-full w-full object-cover scale-150 mt-4 ml-2 text-white" 
+            />              </div>
               <span className="font-black text-t-primary uppercase tracking-tighter">
                 Ch Abdullah
               </span>

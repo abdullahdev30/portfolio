@@ -1,62 +1,136 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+"use client";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
+
+const TypingText = ({ text }) => {
+  return (
+    <span className="inline-flex min-h-[1.5em] items-center">
+      <Typewriter
+        options={{
+          strings: [text],
+          autoStart: true,
+          loop: true,
+          delay: 100,
+          cursor: "|",
+          cursorClassName: "animate-pulse text-t-primary",
+        }}
+      />
+    </span>
+  );
+};
 
 const Hero = () => {
   return (
-    <section className="relative w-full bg-background px-6 py-24 lg:py-40 overflow-hidden flex flex-col items-center justify-center text-center">
-      
-      <div className="absolute top-1/3 md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] md:w-[800px] md:h-[400px] bg-t-secondary/30 blur-[120px] rounded-full z-10" />
-
-      <div className="mx-auto max-w-4xl flex flex-col items-center">
-        
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#f27f0c] bg-background px-4 py-1.5 mb-8">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-24 text-center lg:py-40">
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-t-secondary/30 blur-[120px] md:h-[400px] md:w-[800px]" />
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#f27f0c]  px-4 py-1.5"
+        >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-t-secondary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-t-secondary"></span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-t-secondary opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-t-secondary"></span>
           </span>
-          <span className="text-[10px] md:text-xs font-bold tracking-wider text-t-secondary uppercase">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-t-secondary md:text-xs">
             Available for New Projects
           </span>
-        </div>
+        </motion.div>
 
-        {/* Hero Content */}
-        <h1 className="text-5xl md:text-6xl font-black leading-[1.1] text-t-primary tracking-tighter">
-          Crafting <span className="text-t-secondary italic">Digital</span> Masterpieces.
-        </h1>
-        
-        <p className="mt-6 max-w-2xl text-base md:text-lg  text-gray-500 dark:text-gray-400 leading-relaxed px-4">
-          I am an Associate Software Engineer specializing in high-impact web experiences. 
-          From Next.js and Tailwind CSS to seamless automation, I transform 
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+          className="text-5xl font-black leading-[1.1] tracking-tighter text-t-primary md:text-6xl"
+        >
+          Crafting <span className="italic text-t-secondary">Digital</span> Masterpieces.
+        </motion.h1>
+
+        {/* Paragraph */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false }}
+          className="mt-6 max-w-2xl px-4 text-base leading-relaxed text-gray-500 dark:text-gray-400 md:text-lg"
+        >
+          I am an Associate Software Engineer specializing in high-impact web experiences.
+          From Next.js and Tailwind CSS to seamless automation, I transform
           complex problems into elegant, functional solutions.
-        </p>
+        </motion.p>
 
         {/* Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-          <button className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-t-secondary px-8 py-4 font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
-            View My Work <ArrowRight size={20} />
-          </button>
-          <button className="w-full sm:w-auto rounded-xl border border-[#f27f0c] bg-white/5 px-8 py-4 font-bold text-t-primary transition-all hover:bg-t-secondary hover:text-white hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false }}
+          className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row"
+        >
+          <a href="#work"
+            className="group flex w-full items-center justify-center gap-2 rounded-xl bg-t-secondary px-8 py-4 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_35px_rgba(234,88,12,0.6)] active:scale-95 sm:w-auto"
+          >
+            View My Work
+            <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-2" />
+          </a>
+
+          <a href="#contact"
+            className="group w-full rounded-xl border border-[#f27f0c] bg-white/5 px-8 py-4 font-bold text-t-primary transition-all duration-300 hover:-translate-y-1 hover:bg-t-secondary hover:text-white hover:shadow-[0_0_35px_rgba(234,88,12,0.6)] active:scale-95 sm:w-auto"
+          >
             Get In Touch
-          </button>
-        </div>
+          </a>
+        </motion.div>
 
-        {/* Stats Row */}
-        <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-16 border-t border-t-primary pt-10 w-full max-w-2xl">
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-black text-t-primary">Fresher</h3>
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Status</p>
-          </div>
-          <div className="flex flex-col items-center mborder-y border-t-primary py-6 sm:border-y-0 sm:py-0 sm:border-x sm:px-8">
-            <h3 className="text-2xl font-black text-t-primary">Frontend Developer</h3>
-                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Expertise</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-black text-t-primary">Automation</h3>
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Project</p>
-          </div>
-        </div>
+        {/* Stats Section */}
+        <div className="mt-20 grid w-full max-w-2xl grid-cols-1 gap-8 border-t border-t-primary pt-10 sm:grid-cols-3 sm:gap-16">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-black text-t-primary">
+              <TypingText text="Fresher" />
+            </h3>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-gray-500">Status</p>
+          </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: false }}
+            className="flex flex-col items-center border-y border-t-primary py-6 sm:border-x sm:border-y-0 sm:px-8 sm:py-0"
+          >
+            <h3 className="text-2xl font-black text-t-primary">
+              <TypingText text="Frontend Dev" />
+            </h3>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-gray-500">Expertise</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: false }}
+            className="flex flex-col items-center"
+          >
+            <h3 className="text-2xl font-black text-t-primary">
+              <TypingText text="Automation" />
+            </h3>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-gray-500">Project</p>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
