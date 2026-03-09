@@ -130,15 +130,11 @@ const TechnicalSkills = () => {
             className="relative group rounded-2xl overflow-hidden border border-white/5 aspect-video"
           >
             <img 
-              src="/workspace-mockup.jpg" 
+              src="/images/skills.png" 
               alt="Workspace" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.5em] bg-black/60 backdrop-blur-md px-6 py-3 border border-orange-600/30">
-                Workspace Insight
-              </span>
-            </div>
+          
           </motion.div>
 
         </div>

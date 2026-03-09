@@ -102,11 +102,11 @@ const About = () => {
                                     <div className="text-left">
                                         <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{item.label}</p>
                                         {item.link ? (
-                                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-white font-bold underline decoration-t-secondary/30 hover:text-t-secondary transition-colors">
+                                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-t-primary font-bold underline decoration-t-secondary/30 hover:text-t-secondary transition-colors">
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="text-white font-bold">{item.value}</p>
+                                            <p className="text-t-primary font-bold">{item.value}</p>
                                         )}
                                     </div>
                                 </motion.div>
@@ -127,7 +127,7 @@ const About = () => {
                             >
                                 <Download size={20} /> Download CV
                             </button>
-                            <button className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-bold text-t-secondary transition-all hover:bg-t-secondary/10 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
+                            <button className="rounded-xl border border-[#f27f0c] px-8 py-4 font-bold text-t-secondary transition-all hover:bg-t-secondary/10 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
                                 Contact Information
                             </button>
                         </motion.div>
