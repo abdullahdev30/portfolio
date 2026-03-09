@@ -33,7 +33,7 @@ const TechnicalSkills = () => {
   };
 
   return (
-    <section className="w-full bg-background px-8 py-20 border-t border-white/5 overflow-hidden">
+    <section id="skills" className="w-full bg-background px-8 py-20 border-t border-white/5 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         
         {/* Header */}
