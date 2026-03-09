@@ -29,7 +29,7 @@ const Skills = () => {
           <h2 className="text-6xl font-black text-white tracking-tight">
             Core <span className="text-t-secondary">Expertise</span>
           </h2>
-          <div className="mt-2 h-1 w-40 bg-t-secondary rounded-full"></div>
+          <div className="mt-2 h-1 w-70 md:w-40 bg-t-secondary rounded-full"></div>
         </div>
 
         {/* Expertise Cards Grid */}
@@ -40,8 +40,8 @@ const Skills = () => {
               className="group relative rounded-2xl bg-background p-8 border border-white/5 transition-all hover:bg-[#32281e] hover:shadow-2xl"
             >
               {/* Icon Container */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary  transition-colors">
-                <div className="text-t-secondary transition-colors">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary  ">
+                <div className="text-t-secondary ">
                   {skill.icon}
                 </div>
               </div>

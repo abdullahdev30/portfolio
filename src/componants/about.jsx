@@ -1,11 +1,12 @@
 "use client"
 import React from 'react';
 import { MapPin, Briefcase, Calendar, Globe, Download } from 'lucide-react';
+import { useState } from "react";
 
 const About = () => {
-  // Function to handle CV download
+    const [active, setActive] = useState(false);
+
   const handleDownload = () => {
-    // Replace '/resume.pdf' with the actual path to your file in the public folder
     const link = document.createElement('a');
     link.href = '/resume.pdf'; 
     link.download = 'Abdullah_Shafique_CV.pdf';
@@ -17,22 +18,35 @@ const About = () => {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
-          {/* Left Side: Image with Glow Effect */}
-          <div className="relative group max-w-md mx-auto lg:max-w-none">
-            <div className="absolute -inset-1 bg-t-secondary rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
-            <div className="relative overflow-hidden rounded-2xl bg-[#2a2118] border border-white/5">
-              <img 
-                src="/images/about.png" 
-                alt="Abdullah Shafique" 
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500 object-cover aspect-[4/5]"
-              />
-            </div>
-          </div>
+<div
+  className="relative group max-w-md mx-auto lg:max-w-none cursor-pointer"
+  onClick={() => setActive(!active)}
+>
+
+  {/* Glow Layer */}
+  <div
+    className={`absolute -inset-1 bg-t-secondary rounded-2xl blur transition duration-700
+    ${active ? "opacity-100" : "opacity-25 group-hover:opacity-100"}`}
+  ></div>
+
+  {/* Image Container */}
+  <div className="relative overflow-hidden rounded-2xl bg-[#2a2118] border border-white/5">
+
+    <img
+      src="/images/about.png"
+      alt="Abdullah Shafique"
+      className={`w-full h-auto object-cover aspect-[4/5] transition-all duration-500
+      ${active ? "opacity-100 grayscale-0" : "opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0"}`}
+    />
+
+  </div>
+
+</div>
 
           {/* Right Side: Content */}
           <div className="text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-              <span className="text-sm md:text-xl font-bold tracking-widest text-t-secondary uppercase">About Me</span>
+              <span className="text-3xl font-semibold md:text-xl font-black text-t-secondary uppercase">About Me</span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-black text-t-primary leading-tight">
@@ -64,7 +78,7 @@ const About = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Experience</p>
-                  <p className="text-white font-bold">Associate Engineer</p>
+                  <p className="text-white font-bold">Associate Software Engineer</p>
                 </div>
               </div>
 
@@ -84,8 +98,8 @@ const About = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">LinkedIn</p>
-                  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline decoration-t-secondary/30 hover:text-t-secondary transition-colors">
-                    linkedin.com/in/abdullah
+                  <a href="https://www.linkedin.com/in/abdullah-shafique-29b337280" target="_blank" rel="noopener noreferrer" className="text-white font-bold underline decoration-t-secondary/30 hover:text-t-secondary transition-colors">
+                    Abdullah Shafique
                   </a>
                 </div>
               </div>
