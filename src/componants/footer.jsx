@@ -11,8 +11,12 @@ const Footer = () => {
           {/* Brand & Tagline */}
           <div className="max-w-xs group cursor-default">
             <div className="flex items-center gap-3 mb-6 transition-transform duration-500 group-hover:translate-x-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f27f0c] shadow-[0_0_20px_rgba(242,127,12,0.3)] animate-pulse group-hover:rotate-[12deg] transition-transform">
-                <Zap size={20} color="black" fill="black" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#f27f0c] shadow-[0_0_20px_rgba(242,127,12,0.3)] animate-pulse group-hover:rotate-[12deg] transition-transform">
+<img
+src="images/lo.png"
+alt="Logo"
+className='scale-150'
+/>
               </div>
               <span className="text-2xl font-black text-t-primary tracking-tighter">
                 Abdullah<span className="text-[#f27f0c]"> Shafique</span>
@@ -50,7 +54,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-ping" />
             <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">
