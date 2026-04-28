@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Send, Globe, Share2, Instagram, Youtube } from 'lucide-react';
+import { Send, Github , Linkedin , Instagram, Youtube } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -94,14 +94,14 @@ const Contact = () => {
             </p>
             <div className="flex justify-center gap-6 md:gap-8">
               {[
-                { Icon: Globe, label: 'Website' },
-                { Icon: Share2, label: 'Share' },
-                { Icon: Instagram, label: 'Instagram' },
-                { Icon: Youtube, label: 'Youtube' }
-              ].map(({ Icon, label }, i) => (
+                { Icon: Github , label: 'Website' ,li:"https://github.com/abdullahdev30"},
+                { Icon: Linkedin , label: 'Share',li:"https://www.linkedin.com/in/abdullah-shafique-29b337280" },
+                { Icon: Instagram, label: 'Instagram' ,li:"https://www.instagram.com/ch.abdullah_shafique"},
+                { Icon: Youtube, label: 'Youtube',li:"" }
+              ].map(({ Icon, label, li }, i) => (
                 <a 
                   key={i} 
-                  href="#" 
+                  href={li}
                   aria-label={label}
                   className="group flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary text-[#f27f0c] border border-white/5 transition-all duration-500
                     hover:bg-[#f27f0c] hover:text-white hover:-translate-y-3 hover:border-[#f27f0c] hover:shadow-[0_20px_40px_rgba(242,127,12,0.3)] 
