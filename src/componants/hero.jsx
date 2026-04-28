@@ -22,7 +22,7 @@ const TypingText = ({ text }) => {
 
 const Hero = () => {
   return (
-    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-24 text-center lg:py-40">
+    <section id="home" className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background px-6 py-24 text-center lg:py-40">
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-t-secondary/30 blur-[120px] md:h-[400px] md:w-[800px]" />
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
         {/* Badge */}
@@ -74,7 +74,7 @@ const Hero = () => {
           viewport={{ once: false }}
           className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row"
         >
-          <a href="#work"
+          <a href="#projects"
             className="group flex w-full items-center justify-center gap-2 rounded-xl bg-t-secondary px-8 py-4 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_35px_rgba(234,88,12,0.6)] active:scale-95 sm:w-auto"
           >
             View My Work
@@ -89,7 +89,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <div className="mt-20 grid w-full max-w-2xl grid-cols-1 gap-8 border-t border-t-primary pt-10 sm:grid-cols-3 sm:gap-16">
+        <div className="mt-20 grid w-full max-w-3xl grid-cols-1 gap-8 border-t border-t-primary pt-10 sm:grid-cols-3 sm:gap-16">
           
           <motion.div
             initial={{ opacity: 0, y: 40 }}

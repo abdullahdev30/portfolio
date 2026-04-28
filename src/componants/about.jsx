@@ -26,7 +26,7 @@ const About = () => {
     };
 
     return (
-        <section className="w-full bg-primary px-6 md:px-8 py-12 md:py-20 overflow-hidden">
+        <section id="about" className="w-full bg-primary px-6 md:px-8 py-12 md:py-20 overflow-hidden">
             <div className="mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     
@@ -127,9 +127,9 @@ const About = () => {
                             >
                                 <Download size={20} /> Download CV
                             </button>
-                            <button className="rounded-xl border border-[#f27f0c] px-8 py-4 font-bold text-t-secondary transition-all hover:bg-t-secondary/10 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
+                            <a  href="#contact" className="rounded-xl border border-[#f27f0c] px-8 py-4 font-bold text-t-secondary transition-all hover:bg-t-secondary/10 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
                                 Contact Information
-                            </button>
+                            </a>
                         </motion.div>
                     </motion.div>
 

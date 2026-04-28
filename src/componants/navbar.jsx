@@ -16,11 +16,11 @@ const Navigation = () => {
         
         {/* Desktop Logo & Branding */}
         <div className="flex items-center gap-3 group cursor-pointer">
-          <div className="flex h-14 w-14  items-center overflow-hidden  rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
+          <div className="flex h-14 w-14 items-center justigy-center overflow-hidden justify-center rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
             <img
               src="/images/lo.png"
               alt="Logo"
-              className="h-full w-full object-cover scale-150 mt-1  text-white" 
+              className="h-full w-full object-cover scale-150 mt-2 text-white" 
             />
           </div>
           <span className="text-2xl font-black tracking-tighter text-t-primary uppercase transition-colors group-hover:text-[#f27f0c]">

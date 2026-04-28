@@ -53,13 +53,9 @@ const Projects = () => {
       icon: <Code2 size={20} />,
       link: "#",
       // DIRECTION: Slide from Left
-      variant: {
-        hidden: { opacity: 0, x: -100 },
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.8, ease: "easeOut" },
-        },
+    variant: {
+        hidden: { opacity: 0, x: -70 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
       },
     },
     {
@@ -69,15 +65,10 @@ const Projects = () => {
       icon: <Cpu size={20} />,
       link: "#",
       // DIRECTION: Pop from Center
-      variant: {
-        hidden: { opacity: 0, scale: 0.7, y: 20 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: { type: "spring", stiffness: 200, damping: 15 },
-        },
-      },
+       variant: {
+        hidden: { opacity: 0, scale: 0.8, y: 20 },
+        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+      }
     },
     {
       title: "Analytical Geometry Tool",
@@ -86,14 +77,10 @@ const Projects = () => {
       icon: <ExternalLink size={20} />,
       link: "#",
       // DIRECTION: Slide from Right
-      variant: {
-        hidden: { opacity: 0, x: 100 },
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.8, ease: "easeOut" },
-        },
-      },
+       variant: {
+        hidden: { opacity: 0, x: 70 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+      }
     },
   ];
 
@@ -119,7 +106,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="w-full bg-background px-8 py-20 border-t border-white/5 overflow-hidden">
+    <section id="projects" className="w-full bg-background px-8 py-20 border-t border-white/5 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         
         {/* Header Animation */}

@@ -11,14 +11,14 @@ const Footer = () => {
           {/* Brand & Tagline */}
           <div className="max-w-xs group cursor-default">
             <div className="flex items-center gap-3 mb-6 transition-transform duration-500 group-hover:translate-x-2">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#f27f0c] shadow-[0_0_20px_rgba(242,127,12,0.3)] animate-pulse group-hover:rotate-[12deg] transition-transform">
-<img
-src="images/lo.png"
-alt="Logo"
-className='scale-150'
-/>
-              </div>
-              <span className="text-2xl font-black text-t-primary tracking-tighter">
+                <div className="flex h-16 w-16 items-center justigy-center overflow-hidden justify-center rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
+            <img
+              src="/images/lo.png"
+              alt="Logo"
+              className="h-full w-full object-cover scale-150 mt-2 text-white" 
+            />
+          </div>
+              <span className="text-3xl font-black text-t-primary tracking-tighter">
                 Abdullah<span className="text-[#f27f0c]"> Shafique</span>
               </span>
             </div>
@@ -30,7 +30,7 @@ className='scale-150'
           {/* Navigation Links */}
           <nav>
             <ul className="flex flex-wrap gap-x-10 gap-y-4">
-              {['Work', 'Services', 'About', 'Contact'].map((item, index) => (
+              {['Home', 'Projects', 'About', 'Contact'].map((item, index) => (
                 <li key={item} className="overflow-hidden">
                   <a 
                     href={`#${item.toLowerCase()}`} 
