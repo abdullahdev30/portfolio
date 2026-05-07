@@ -79,26 +79,27 @@ const Navigation = () => {
       >
         <div className="flex flex-col h-full">
           {/* Sidebar Header */}
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f27f0c]">
-                <img
-                  src="/images/lo.svg"
-                  alt="Logo"
-                  className="h-full w-full object-cover scale-150 mt-4 ml-2" 
-                />
-              </div>
-              <span className="font-black text-t-primary uppercase tracking-tighter">
-                Ch Abdullah
-              </span>
+          <div className="flex items-center justify-start mb-12 ">
+            <div className="flex items-center -ml-6 items-center  gap-2">
+             <div className="flex h-12 w-12  items-center overflow-hidden  rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
+            <img
+              src="/images/lo.png"
+              alt="Logo"
+              className="h-full w-full object-cover scale-150 mt-1  text-white" 
+            />
+          </div>
+          <span className="text-xl font-black tracking-tighter text-t-primary uppercase transition-colors group-hover:text-[#f27f0c]">
+            Ch<span className="text-[#f27f0c] group-hover:text-t-primary"> Abdullah</span>
+          </span>
             </div>
-            <button onClick={toggleSidebar} className="p-2 hover:bg-white/5 rounded-full transition-colors">
+            <button onClick={toggleSidebar} className="p-2 hover:bg-white/5 rounded-full ml-18  transition-colors">
               <X size={24} className="text-[#f27f0c]" />
             </button>
           </div>
+<div className="w-74 -mt-8 -ml-8 h-0.5 bg-[#f27f0c] rounded-full "></div>
 
           {/* Sidebar Navigation (Large Sliding Links) */}
-          <ul className="flex flex-col gap-8 flex-grow">
+          <ul className="flex flex-col gap-8 flex-grow mt-12">
             {navItems.map((item, i) => (
               <li 
                 key={item} 
@@ -108,7 +109,7 @@ const Navigation = () => {
                 <a 
                   href={`#${item.toLowerCase()}`} 
                   onClick={toggleSidebar}
-                  className="group relative flex items-center text-4xl font-black text-t-primary uppercase tracking-tighter transition-all"
+                  className="group relative flex items-center text-xl font-bold  text-t-primary uppercase tracking-tighter transition-all"
                 >
                   <span className="group-hover:text-[#f27f0c] group-hover:translate-x-4 transition-all duration-300">
                     {item}
