@@ -76,7 +76,7 @@ const Skills = () => {
                 borderColor: "rgba(234, 88, 12, 0.3)", // t-secondary with opacity
                 transition: { duration: 0.3 } 
               }}
-              className="group relative rounded-2xl bg-background p-8 border border-white/5 transition-colors shadow-xl"
+              className="group relative rounded-2xl bg-primary text-black  dark:text-white p-8 border border-white/5 transition-colors shadow-xl"
             >
               {/* Icon Container */}
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary transition-transform group-hover:scale-110 group-hover:rotate-3">

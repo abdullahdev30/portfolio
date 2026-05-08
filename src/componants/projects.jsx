@@ -138,11 +138,11 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }} // Loop True
               whileHover={{ y: -10 }}
-              className="group bg-secondary rounded-2xl border border-white/5 overflow-hidden transition-all hover:border-[#f27f0c] hover:-translate-y-8 duration-500 shadow-2xl"
+              className="group bg-secondary text-black  dark:text-white rounded-2xl border border-white/5 overflow-hidden transition-all hover:border-[#f27f0c] hover:-translate-y-8 duration-500 shadow-2xl"
             >
-              <div className="aspect-video bg-[#1a140f] flex items-center justify-center relative overflow-hidden">
+              <div className="aspect-video bg-primary flex items-center justify-center relative overflow-hidden">
                 {/* Visual Icon Container */}
-                <div className="text-t-secondary opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                <div className="text-t-secondary opacity-20 group-hover:opacity-100  group-hover:scale-110 transition-all duration-500">
                   {React.cloneElement(project.icon, { size: 48 })}
                 </div>
 
