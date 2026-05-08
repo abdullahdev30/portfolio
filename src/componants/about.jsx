@@ -9,8 +9,8 @@ const About = () => {
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = '/resume.pdf'; 
-        link.download = 'Abdullah_Shafique_CV.pdf';
+        link.href = '/resume/Abdullah_Shafique_Resume.pdf'; 
+        link.download = 'ch_Abdullah_Shafique_Resume.pdf';
         link.click();
     };
 
@@ -125,7 +125,7 @@ const About = () => {
                                 onClick={handleDownload}
                                 className="flex items-center justify-center gap-2 rounded-xl bg-t-secondary px-8 py-4 font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]"
                             >
-                                <Download size={20} /> Download CV
+                                <Download size={20} /> Download Resume
                             </button>
                             <a  href="#contact" className="rounded-xl border border-[#f27f0c] px-8 py-4 font-bold text-t-secondary transition-all hover:bg-t-secondary/10 hover:shadow-[0_0_25px_rgba(234,88,12,0.4)]">
                                 Contact Information
