@@ -41,6 +41,22 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/images/favicon-master-1024.png" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem("theme");
+                  if (saved === "light") {
+                    document.documentElement.classList.remove("dark");
+                  } else {
+                    document.documentElement.classList.add("dark");
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${plusJakartaSans.variable} ${syne.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}

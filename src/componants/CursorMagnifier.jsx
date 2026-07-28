@@ -6,13 +6,13 @@ export default function CursorMagnifier() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // We are re-adding the spring but with highly optimized "smooth but fast" configuration
-  // This removes the "laggy" feeling while keeping the premium trailing animation.
-  const springConfig = { damping: 40, stiffness: 600, mass: 0.05 };
+  // Smooth, optimized spring for fluid cursor tracking
+  const springConfig = { damping: 35, stiffness: 500, mass: 0.05 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-  const [isHovering, setIsHovering] = useState(false);
+  // States: "default" | "textZoom" (headings & paragraphs) | "interactive" (buttons & links)
+  const [cursorState, setCursorState] = useState("default");
 
   useEffect(() => {
     const updateMousePosition = (e) => {
@@ -22,29 +22,33 @@ export default function CursorMagnifier() {
 
     const handleMouseOver = (e) => {
       const target = e.target;
-      const tName = target.tagName?.toLowerCase();
-      
-      // Comprehensive list of text and interactive tags
-      const textTags = [
-        "p", "h1", "h2", "h3", "h4", "h5", "h6", "span", "a", "button", 
-        "img", "svg", "li", "label", "strong", "em", "b", "i", "td", "th"
-      ];
+      if (!target) return;
 
-      if (
-        textTags.includes(tName) ||
-        target.closest(textTags.join(", ")) ||
-        window.getComputedStyle(target).cursor === "pointer"
-      ) {
-        setIsHovering(true);
+      const tName = target.tagName?.toLowerCase();
+
+      // 1. Buttons, links, inputs, and clickable interactive elements
+      const isInteractive =
+        ["a", "button", "input", "select", "textarea"].includes(tName) ||
+        Boolean(target.closest("a, button, [role='button'], input, select, textarea")) ||
+        window.getComputedStyle(target).cursor === "pointer";
+
+      // 2. Heading and Paragraph text elements ONLY
+      const isHeadingOrParagraph =
+        ["p", "h1", "h2", "h3", "h4", "h5", "h6"].includes(tName) ||
+        Boolean(target.closest("p, h1, h2, h3, h4, h5, h6"));
+
+      if (isInteractive) {
+        setCursorState("interactive");
+      } else if (isHeadingOrParagraph) {
+        setCursorState("textZoom");
       } else {
-        setIsHovering(false);
+        setCursorState("default");
       }
     };
 
     window.addEventListener("mousemove", updateMousePosition, { passive: true });
     window.addEventListener("mouseover", handleMouseOver, { passive: true });
 
-    // Add a class to body to hide default cursor
     document.body.classList.add("custom-cursor-active");
 
     return () => {
@@ -56,19 +60,34 @@ export default function CursorMagnifier() {
 
   const variants = {
     default: {
-      height: 20,
-      width: 20,
-      backgroundColor: "rgba(242, 127, 12, 1)",
+      height: 16,
+      width: 16,
+      backgroundColor: "rgba(242, 127, 12, 0.95)",
       mixBlendMode: "normal",
-      border: "0px solid rgba(242, 127, 12, 0)",
+      border: "0px solid transparent",
+      boxShadow: "0 0 10px rgba(242, 127, 12, 0.5)",
+      scale: 1,
     },
-    text: {
-      height: 100,
-      width: 100,
-      backgroundColor: "transparent",
+    // Circle text magnifier for Headings and Paragraphs ONLY
+    textZoom: {
+      height: 76,
+      width: 76,
+      backgroundColor: "rgba(242, 127, 12, 0.12)",
       mixBlendMode: "difference",
-      border: "2px solid rgba(255, 255, 255, 0.8)",
-    }
+      border: "2px solid rgba(242, 127, 12, 0.85)",
+      boxShadow: "0 0 20px rgba(242, 127, 12, 0.3)",
+      scale: 1.1,
+    },
+    // Sleek focus ring for Buttons and Links (NO text zoom)
+    interactive: {
+      height: 36,
+      width: 36,
+      backgroundColor: "rgba(242, 127, 12, 0.2)",
+      mixBlendMode: "normal",
+      border: "1.5px solid rgba(242, 127, 12, 0.9)",
+      boxShadow: "0 0 15px rgba(242, 127, 12, 0.4)",
+      scale: 1,
+    },
   };
 
   return (
@@ -86,23 +105,25 @@ export default function CursorMagnifier() {
           y: "-50%",
         }}
         variants={variants}
-        animate={isHovering ? "text" : "default"}
+        animate={cursorState}
         transition={{
           type: "spring",
-          stiffness: 400,
-          damping: 25,
-          mass: 0.5
+          stiffness: 450,
+          damping: 28,
+          mass: 0.2,
         }}
       >
-        {/* Optional internal dot/crosshair */}
-        {isHovering && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="w-1 h-1 bg-white rounded-full mix-blend-difference"
+        {/* Inner center dot for text zoom mode */}
+        {cursorState === "textZoom" && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            className="w-1.5 h-1.5 rounded-full bg-[#f27f0c] shadow-[0_0_8px_#f27f0c]"
           />
         )}
       </motion.div>
     </motion.div>
   );
 }
+

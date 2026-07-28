@@ -151,10 +151,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-syne text-4xl font-black tracking-tight text-t-primary sm:text-6xl xl:text-7xl leading-[1.08]"
+              className="font-syne text-4xl font-black tracking-tight text-t-primary md:text-6xl  leading-[1.08]"
             >
               Crafting{" "}
-              <span className="relative inline-block italic text-transparent bg-clip-text bg-gradient-to-r from-[#f27f0c] via-amber-400 to-[#f27f0c] drop-shadow-[0_0_25px_rgba(242,127,12,0.45)]">
+              <span className="relative inline-block italic text-t-secondary ">
                 Digital
               </span>{" "}
               Masterpieces<span className="text-t-secondary">.</span>

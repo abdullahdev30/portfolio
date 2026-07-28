@@ -74,7 +74,7 @@ const Skills = () => {
                 y: -10, 
                 transition: { duration: 0.3 } 
               }}
-              className="group relative rounded-2xl bg-white dark:bg-[#1a140e] text-t-primary p-8 border border-t-primary/10 dark:border-white/5 transition-all duration-300 hover:bg-secondary dark:hover:bg-[#2b1d10] shadow-xl"
+              className="group relative rounded-2xl bg-secondary text-t-primary p-8 border border-t-primary/10 dark:border-white/5 transition-all duration-300 hover:bg-primary shadow-xl"
             >
               {/* Icon Container */}
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-t-secondary/10 text-t-secondary transition-transform group-hover:scale-110 group-hover:rotate-3 shadow-inner">
