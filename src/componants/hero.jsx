@@ -40,6 +40,10 @@ const AnimatedCounter = ({ to, suffix = "", duration = 1.8 }) => {
     const animFrame = window.requestAnimationFrame(step);
     return () => window.cancelAnimationFrame(animFrame);
   }, [isInView, to, duration]);
+<meta name="google-site-verification" content="yjhECT8HewYu3-5q9yTPXE996DhDQ2u5rRxUNjpjFak" />
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
   return (
     <span ref={ref}>
