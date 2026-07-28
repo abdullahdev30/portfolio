@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@500..700&family=Syne:wght@700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -5,7 +6,7 @@
   --text-primary: #232c3d;
   --text-secondary: #f27f0c;
   --primary: #f7f7f5;
-  --secondary:#F3EEE9;
+  --secondary: #F3EEE9;
 }
 
 @theme inline {
@@ -15,24 +16,42 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-syne: var(--font-syne), 'Syne', sans-serif;
+  --font-space: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  --font-sans: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
 }
 
-  .dark {
+.dark {
   --background: #211910;
   --text-primary: #f2f6fa;
   --text-secondary: #f27f0c;
   --primary: #1a140e;
   --secondary: #2b1d10;
-  }
+}
 
+.font-syne {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+}
+
+.font-space {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+}
+
+.font-sans {
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
+}
 
 body {
   background: var(--background);
   color: var(--t-primary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
-}
+}

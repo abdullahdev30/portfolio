@@ -38,7 +38,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="w-full px-8 py-20 bg-secondary border-t border-white/5 overflow-hidden">
+    <section className="w-full px-8 py-20 bg-background border-t border-white/5 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         
         {/* Section Header */}
@@ -49,7 +49,7 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-t-primary tracking-tight">
+          <h2 className="font-space text-5xl md:text-6xl font-black text-t-primary tracking-tight">
             Core <span className="text-t-secondary">Expertise</span>
           </h2>
           <motion.div 
@@ -72,24 +72,20 @@ const Skills = () => {
               viewport={{ once: false, amount: 0.2 }}
               whileHover={{ 
                 y: -10, 
-                backgroundColor: "#32281e",
-                borderColor: "rgba(234, 88, 12, 0.3)", // t-secondary with opacity
                 transition: { duration: 0.3 } 
               }}
-              className="group relative rounded-2xl bg-primary text-black  dark:text-white p-8 border border-white/5 transition-colors shadow-xl"
+              className="group relative rounded-2xl bg-white dark:bg-[#1a140e] text-t-primary p-8 border border-t-primary/10 dark:border-white/5 transition-all duration-300 hover:bg-secondary dark:hover:bg-[#2b1d10] shadow-xl"
             >
               {/* Icon Container */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary transition-transform group-hover:scale-110 group-hover:rotate-3">
-                <div className="text-t-secondary">
-                  {skill.icon}
-                </div>
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-t-secondary/10 text-t-secondary transition-transform group-hover:scale-110 group-hover:rotate-3 shadow-inner">
+                {skill.icon}
               </div>
 
               {/* Text Content */}
-              <h3 className="mb-3 text-xl font-bold text-t-primary group-hover:text-t-secondary transition-colors">
+              <h3 className="font-space mb-3 text-xl font-bold text-t-primary group-hover:text-t-secondary transition-colors">
                 {skill.title}
               </h3>
-              <p className="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300 transition-colors">
+              <p className="font-sans text-sm leading-relaxed text-t-primary/70 group-hover:text-t-primary transition-colors">
                 {skill.desc}
               </p>
 

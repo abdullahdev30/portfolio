@@ -17,8 +17,10 @@ module.exports = {
         secondary: 'var(--secondary)',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'Arial', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        syne: ['var(--font-syne)', 'Syne', 'sans-serif'],
+        space: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'monospace'],
+        sans: ['var(--font-plus-jakarta-sans)', 'Plus Jakarta Sans', 'sans-serif'],
       },
     },
   },
