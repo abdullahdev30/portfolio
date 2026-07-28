@@ -1,4 +1,5 @@
 "use client";
+<meta name="google-site-verification" content="yjhECT8HewYu3-5q9yTPXE996DhDQ2u5rRxUNjpjFak" />
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, Sparkles, Briefcase, Code, Globe, Award } from "lucide-react";
 import { motion, useInView } from "framer-motion";
@@ -6,7 +7,9 @@ import { RiNextjsLine } from "react-icons/ri";
 import { SiN8N } from "react-icons/si";
 import { SiNestjs } from "react-icons/si";
 import { RiSupabaseFill } from "react-icons/ri";
-
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 
 
@@ -40,10 +43,7 @@ const AnimatedCounter = ({ to, suffix = "", duration = 1.8 }) => {
     const animFrame = window.requestAnimationFrame(step);
     return () => window.cancelAnimationFrame(animFrame);
   }, [isInView, to, duration]);
-<meta name="google-site-verification" content="yjhECT8HewYu3-5q9yTPXE996DhDQ2u5rRxUNjpjFak" />
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
+
 
   return (
     <span ref={ref}>
