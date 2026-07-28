@@ -1,5 +1,6 @@
 "use client";
 <meta name="google-site-verification" content="yjhECT8HewYu3-5q9yTPXE996DhDQ2u5rRxUNjpjFak" />
+
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, Sparkles, Briefcase, Code, Globe, Award } from "lucide-react";
 import { motion, useInView } from "framer-motion";
@@ -10,6 +11,7 @@ import { RiSupabaseFill } from "react-icons/ri";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+
 
 
 
@@ -146,7 +148,7 @@ const Hero = () => {
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-t-secondary shadow-[0_0_8px_#f27f0c]"></span>
               </span>
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-t-secondary">
-                Available for New Projects
+                Available for New Projects.
               </span>
             </motion.div>
 
