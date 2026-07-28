@@ -4,21 +4,35 @@ import { useEffect, useState } from "react"
 import { Sun, Moon } from "lucide-react"
 
 export default function ThemeToggle() {
-  // Set default state to true for Dark Mode
   const [dark, setDark] = useState(true)
 
   useEffect(() => {
-    // Force dark mode on initial load without checking localStorage
-    document.documentElement.classList.add("dark")
+    // Read theme preference from localStorage on page load / refresh
+    const savedTheme = localStorage.getItem("theme")
+    if (savedTheme === "light") {
+      setDark(false)
+      document.documentElement.classList.remove("dark")
+    } else if (savedTheme === "dark") {
+      setDark(true)
+      document.documentElement.classList.add("dark")
+    } else {
+      // Default to dark mode if no saved preference
+      setDark(true)
+      document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+    }
   }, [])
 
   const toggleTheme = () => {
     if (dark) {
       document.documentElement.classList.remove("dark")
+      localStorage.setItem("theme", "light")
+      setDark(false)
     } else {
       document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+      setDark(true)
     }
-    setDark(!dark)
   }
 
   return (
@@ -42,9 +56,9 @@ export default function ThemeToggle() {
 
       {/* Background Icons for visual flair */}
       <div className="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
-         <Sun size={12} className={`${dark ? "opacity-40" : "opacity-0"} text-yellow-500 transition-opacity`} />
-         <Moon size={12} className={`${dark ? "opacity-0" : "opacity-40"} text-blue-300 transition-opacity`} />
+        <Sun size={12} className={`${dark ? "opacity-40" : "opacity-0"} text-yellow-500 transition-opacity`} />
+        <Moon size={12} className={`${dark ? "opacity-0" : "opacity-40"} text-blue-300 transition-opacity`} />
       </div>
     </button>
   )
-}
+}

@@ -50,34 +50,37 @@ const Projects = () => {
       title: "Devisgon Web Platform",
       desc: "A high-performance blog and service site integrated with Payload CMS and multilingual support.",
       tags: ["Next.js", "Payload CMS", "Tailwind"],
+      image: "/projects_mockup/devisgon.png",
       icon: <Code2 size={20} />,
-      link: "#",
+      link: "https://www.devisgon.com/",
       // DIRECTION: Slide from Left
-    variant: {
+      variant: {
         hidden: { opacity: 0, x: -70 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
       },
     },
     {
-      title: "Taskera AI Dashboard",
-      desc: "An intelligent task management interface designed for streamlined team collaboration and tracking.",
-      tags: ["React", "Node.js", "Supabase"],
+      title: "Planto Web Platform",
+      desc: "A modern, aesthetic plant store and e-commerce experience designed for plant enthusiasts.",
+      tags: ["Next.js", "React", "Tailwind"],
+      image: "/projects_mockup/planto.png",
       icon: <Cpu size={20} />,
-      link: "#",
+      link: "https://planto-blond.vercel.app/",
       // DIRECTION: Pop from Center
-       variant: {
+      variant: {
         hidden: { opacity: 0, scale: 0.8, y: 20 },
         visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
       }
     },
     {
-      title: "Analytical Geometry Tool",
-      desc: "A specialized educational platform for visualizing 3D coordinate geometry and mathematical functions.",
-      tags: ["JavaScript", "Three.js", "Python"],
+      title: "Delt4 Digital Platform",
+      desc: "A sleek, modern web platform engineered for seamless data interaction and digital solutions.",
+      tags: ["Next.js", "TypeScript", "Tailwind"],
+      image: "/projects_mockup/delt4.png",
       icon: <ExternalLink size={20} />,
-      link: "#",
+      link: "https://d3lt4.xyz/",
       // DIRECTION: Slide from Right
-       variant: {
+      variant: {
         hidden: { opacity: 0, x: 70 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
       }
@@ -117,13 +120,13 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-xl font-bold text-t-secondary uppercase tracking-[0.2em] mb-2">
+          <p className="font-mono text-xl font-bold text-t-secondary uppercase tracking-[0.2em] mb-2">
             Portfolio Showcase
           </p>
-          <h2 className="text-5xl font-black text-t-primary">
+          <h2 className="font-space text-5xl font-black text-t-primary">
             Featured Projects
           </h2>
-          <p className="mt-4 text-gray-400 max-w-2xl">
+          <p className="font-sans mt-4 text-gray-400 max-w-2xl">
             A curated selection of my most impactful digital experiences.
           </p>
         </motion.div>
@@ -138,45 +141,73 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }} // Loop True
               whileHover={{ y: -10 }}
-              className="group bg-secondary text-black  dark:text-white rounded-2xl border border-white/5 overflow-hidden transition-all hover:border-[#f27f0c] hover:-translate-y-8 duration-500 shadow-2xl"
+              className="group bg-secondary text-black dark:text-white rounded-2xl border border-white/10 overflow-hidden transition-all hover:border-[#f27f0c] hover:-translate-y-8 duration-500 shadow-2xl flex flex-col justify-between"
             >
-              <div className="aspect-video bg-primary flex items-center justify-center relative overflow-hidden">
-                {/* Visual Icon Container */}
-                <div className="text-t-secondary opacity-20 group-hover:opacity-100  group-hover:scale-110 transition-all duration-500">
-                  {React.cloneElement(project.icon, { size: 48 })}
+              <div>
+                <div className="aspect-video bg-primary flex items-center justify-center relative overflow-hidden">
+                  {project.image ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full h-full block">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </a>
+                  ) : (
+                    <div className="text-t-secondary opacity-20 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                      {React.cloneElement(project.icon, { size: 48 })}
+                    </div>
+                  )}
+
+                  <div className="absolute top-4 right-4 z-10">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-full bg-black/60 backdrop-blur-md text-white hover:text-t-secondary hover:bg-black/80 transition-colors shadow-lg flex items-center justify-center"
+                      title="View Live Site"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
+                  </div>
                 </div>
 
-                <div className="absolute top-4 right-4">
-                  <a
-                    href={project.link}
-                    className="p-2 
-                    rounded-lg text-white hover:text-t-secondary transition-colors"
-                  >
-                    <ExternalLink size={18} />
+                <div className="p-6">
+                  <div className="flex gap-2 mb-3 flex-wrap">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono flex items-center gap-1 text-[9px] font-bold text-t-secondary bg-t-secondary/10 px-2 py-0.5 rounded uppercase tracking-tighter"
+                      >
+                        {techIcons[tag]}
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <h3 className="font-space text-t-primary font-bold text-xl mb-2 group-hover:text-t-secondary transition-colors">
+                      {project.title}
+                    </h3>
                   </a>
+
+                  <p className="font-sans text-sm text-gray-400 leading-relaxed">
+                    {project.desc}
+                  </p>
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex gap-2 mb-3 flex-wrap">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="flex items-center gap-1 text-[9px] font-bold text-t-secondary bg-t-secondary/10 px-2 py-0.5 rounded uppercase tracking-tighter"
-                    >
-                      {techIcons[tag]}
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="text-t-primary font-bold text-xl mb-2 group-hover:text-t-secondary transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  {project.desc}
-                </p>
+              {/* View Live Project Action Line */}
+              <div className="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between mt-auto">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-space inline-flex items-center gap-2 text-xs font-bold text-t-secondary hover:text-white transition-colors group/link"
+                >
+                  <span>View Live Project</span>
+                  <ExternalLink size={14} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                </a>
               </div>
             </motion.div>
           ))}
@@ -192,7 +223,7 @@ const Projects = () => {
         >
           <div className="flex items-center gap-3 mb-8">
             <span className="h-2 w-2 rounded-full bg-t-secondary animate-pulse"></span>
-            <h3 className="text-xl font-bold text-t-primary uppercase tracking-widest">
+            <h3 className="font-space text-xl font-bold text-t-primary uppercase tracking-widest">
               Ongoing & Future Projects
             </h3>
           </div>
@@ -211,11 +242,11 @@ const Projects = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-t-primary font-bold mb-1">
+                  <h4 className="font-space text-t-primary font-bold mb-1">
                     {fProject.title}
                   </h4>
 
-                  <p className="text-xs text-gray-400 mb-3">
+                  <p className="font-sans text-xs text-gray-400 mb-3">
                     {fProject.desc}
                   </p>
 
@@ -223,7 +254,7 @@ const Projects = () => {
                     {fProject.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="flex items-center gap-1 text-[8px] font-bold text-gray-400 border border-white/10 px-1.5 py-0.5 rounded"
+                        className="font-mono flex items-center gap-1 text-[8px] font-bold text-gray-400 border border-white/10 px-1.5 py-0.5 rounded"
                       >
                         {techIcons[tag]}
                         {tag}
@@ -243,18 +274,18 @@ const Projects = () => {
           viewport={{ once: false }}
           className="mt-24 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-black text-t-primary mb-8">
+          <h2 className="font-space text-3xl md:text-5xl font-black text-t-primary mb-8">
             Have a project in mind?
           </h2>
 
-          <p className="text-gray-500 mb-10 max-w-xl mx-auto">
+          <p className="font-sans text-gray-500 mb-10 max-w-xl mx-auto">
             I'm always open to discussing new projects and creative ideas.
           </p>
 
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="rounded-full bg-t-secondary px-10 py-4 font-bold text-white shadow-[0_0_30px_rgba(234,88,12,0.4)]"
+            className="font-space rounded-full bg-t-secondary px-10 py-4 font-bold text-white shadow-[0_0_30px_rgba(234,88,12,0.4)]"
           >
             Let's Get Started
           </motion.button>
