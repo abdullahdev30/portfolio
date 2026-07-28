@@ -58,6 +58,9 @@ export default function RootLayout({
           }}
         />
       </head>
+      <title> homepage</title>
+
+      <meta name="google-site-verification" content="yjhECT8HewYu3-5q9yTPXE996DhDQ2u5rRxUNjpjFak" />
       <body
         className={`${plusJakartaSans.variable} ${syne.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
