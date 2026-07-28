@@ -142,7 +142,7 @@ const Hero = () => {
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-t-secondary shadow-[0_0_8px_#f27f0c]"></span>
               </span>
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-t-secondary">
-                Available for New Projects
+                Available for New Projects.
               </span>
             </motion.div>
 
