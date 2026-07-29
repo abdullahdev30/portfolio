@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { ExternalLink, Code2, Smartphone, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -147,9 +148,12 @@ const Projects = () => {
                 <div className="aspect-video bg-primary flex items-center justify-center relative overflow-hidden">
                   {project.image ? (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full h-full block">
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
+                        width={640}
+                        height={360}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     </a>
@@ -279,7 +283,7 @@ const Projects = () => {
           </h2>
 
           <p className="font-sans text-gray-500 mb-10 max-w-xl mx-auto">
-            I'm always open to discussing new projects and creative ideas.
+            I&apos;m always open to discussing new projects and creative ideas.
           </p>
 
           <motion.button 
@@ -287,7 +291,7 @@ const Projects = () => {
             whileTap={{ scale: 0.95 }}
             className="font-space rounded-full bg-t-secondary px-10 py-4 font-bold text-white shadow-[0_0_30px_rgba(234,88,12,0.4)]"
           >
-            Let's Get Started
+            Let&apos;s Get Started
           </motion.button>
         </motion.div>
 

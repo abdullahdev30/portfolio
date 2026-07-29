@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Zap } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -12,9 +12,11 @@ const Footer = () => {
           <div className="max-w-xs group cursor-default">
             <div className="flex items-center gap-3 mb-6 transition-transform duration-500 group-hover:translate-x-2">
                 <div className="flex h-16 w-16 items-center justigy-center overflow-hidden justify-center rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
-            <img
+            <Image
               src="/images/lo.png"
               alt="Logo"
+              width={64}
+              height={64}
               className="h-full w-full object-cover scale-150 mt-2 text-white" 
             />
           </div>
@@ -30,7 +32,7 @@ const Footer = () => {
           {/* Navigation Links */}
           <nav>
             <ul className="flex flex-wrap gap-x-10 gap-y-4">
-              {['Home', 'Projects', 'About', 'Contact'].map((item, index) => (
+              {['Home', 'Projects', 'About', 'Contact'].map((item) => (
                 <li key={item} className="overflow-hidden">
                   <a 
                     href={`#${item.toLowerCase()}`} 
