@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react'; 
 import Theme_toggle from "@/componants/theme_provider"; 
 
@@ -17,9 +18,11 @@ const Navigation = () => {
         {/* Desktop Logo & Branding */}
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="flex h-14 w-14 items-center justigy-center overflow-hidden justify-center rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
-            <img
+            <Image
               src="/images/lo.png"
               alt="Logo"
+              width={56}
+              height={56}
               className="h-full w-full object-cover scale-150 mt-2 text-white" 
             />
           </div>
@@ -82,9 +85,11 @@ const Navigation = () => {
           <div className="flex items-center justify-start mb-12 ">
             <div className="flex items-center -ml-6 items-center  gap-2">
              <div className="flex h-12 w-12  items-center overflow-hidden  rounded-xl bg-[#f27f0c] transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-[0_0_15px_rgba(242,127,12,0.2)]">
-            <img
+            <Image
               src="/images/lo.png"
               alt="Logo"
+              width={48}
+              height={48}
               className="h-full w-full object-cover scale-150 mt-1  text-white" 
             />
           </div>

@@ -3,36 +3,24 @@
 import { useEffect, useState } from "react"
 import { Sun, Moon } from "lucide-react"
 
+function getInitialDarkMode() {
+  if (typeof window === "undefined") {
+    return true
+  }
+
+  return localStorage.getItem("theme") !== "light"
+}
+
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(getInitialDarkMode)
 
   useEffect(() => {
-    // Read theme preference from localStorage on page load / refresh
-    const savedTheme = localStorage.getItem("theme")
-    if (savedTheme === "light") {
-      setDark(false)
-      document.documentElement.classList.remove("dark")
-    } else if (savedTheme === "dark") {
-      setDark(true)
-      document.documentElement.classList.add("dark")
-    } else {
-      // Default to dark mode if no saved preference
-      setDark(true)
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    }
-  }, [])
+    document.documentElement.classList.toggle("dark", dark)
+    localStorage.setItem("theme", dark ? "dark" : "light")
+  }, [dark])
 
   const toggleTheme = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-      setDark(false)
-    } else {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-      setDark(true)
-    }
+    setDark((current) => !current)
   }
 
   return (
@@ -61,4 +49,4 @@ export default function ThemeToggle() {
       </div>
     </button>
   )
-}
+}

@@ -1,7 +1,7 @@
 "use client"
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
-import { Send, Github , Linkedin , Instagram, Youtube } from 'lucide-react';
+import { Send, Github , Linkedin , Instagram } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -30,7 +30,7 @@ const Contact = () => {
       } else {
         setSubmitMessage('Failed to send message. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setSubmitMessage('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -47,7 +47,7 @@ const Contact = () => {
             Contact Me
           </p>
           <h2 className="text-4xl md:text-6xl font-black text-t-primary leading-[1.1] tracking-tighter">
-            Let's build something <br />
+            Let&apos;s build something <br />
             <span className="text-[#f27f0c] underline decoration-white/10 underline-offset-8">extraordinary</span> together.
           </h2>
         </div>

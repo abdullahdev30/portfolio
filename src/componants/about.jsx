@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import { MapPin, Briefcase, Calendar, Globe, Download } from 'lucide-react';
 import { useState } from "react";
 import { motion } from "framer-motion"; 
@@ -47,9 +48,11 @@ const About = () => {
 
                         {/* Image Container */}
                         <div className="relative overflow-hidden rounded-2xl bg-[#2a2118] border border-white/5">
-                            <img
+                            <Image
                                 src="/images/about.png"
                                 alt="Abdullah Shafique"
+                                width={800}
+                                height={1000}
                                 className={`w-full h-auto object-cover aspect-[4/5] transition-all duration-500
                                 ${active ? "opacity-100 grayscale-0" : "opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0"}`}
                             />
